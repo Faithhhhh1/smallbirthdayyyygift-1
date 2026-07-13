@@ -36,17 +36,14 @@ function showLoading(duration = 4000, fadeDuration = 1000, displayDelay = 1000, 
         pixelFill.style.width = "100%";
     }, 50);
 
-    // Delay fade-out after progress completes
-    setTimeout(() => {
-        loadingScreen.classList.add("fade-out");
-        setTimeout(() => {
-            loadingScreen.classList.remove("active", "fade-out");
-            if (callback) {
-                setTimeout(callback, 100); // Small buffer after fade
-            }
-        }, fadeDuration);
-    }, duration + displayDelay); // Delay fade-out by displayDelay
-}
+    // Hide instantly after progress completes
+setTimeout(() => {
+    loadingScreen.classList.remove("active");
+
+    if (callback) {
+        callback();
+    }
+}, duration + displayDelay);
 
 
 /* ---------- Back Button (main.js) ---------- */
