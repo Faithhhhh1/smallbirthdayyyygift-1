@@ -51,7 +51,7 @@ function showLoading(duration = 4000, fadeDuration = 1000, displayDelay = 1000, 
 
     // Delay fade-out after progress completes
     setTimeout(() => {
-        loadingScreen.classList.add("fade-out");
+        loadingScreen.classList.remove("active");
         setTimeout(() => {
             loadingScreen.classList.remove("active", "fade-out");
             if (callback) {
