@@ -28,7 +28,7 @@ function showLoading(duration = 4000, fadeDuration = 1000, displayDelay = 1000, 
 
     // Show loader
     loadingScreen.classList.add("active");
-    loadingScreen.classList.remove("fade-out");
+    loadingScreen.classList.remove("active");
 
     // Animate progress
     setTimeout(() => {
@@ -38,7 +38,7 @@ function showLoading(duration = 4000, fadeDuration = 1000, displayDelay = 1000, 
 
     // Delay fade-out after progress completes
     setTimeout(() => {
-        loadingScreen.classList.add("fade-out");
+        loadingScreen.classList.add("active");
         setTimeout(() => {
             loadingScreen.classList.remove("active", "fade-out");
             if (callback) {
